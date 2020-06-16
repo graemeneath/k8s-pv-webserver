@@ -5,9 +5,12 @@ metadata:
   labels:
     app: nolimits
 spec:
-  storageClassName: manual
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
+  selector:
+    matchLabels:
+      component: nolimits
+      function: www
